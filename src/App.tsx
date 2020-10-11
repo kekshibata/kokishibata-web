@@ -1,26 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { FC, useRef } from 'react';
 import './App.css';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import Home from './components/pages/Home';
 
-function App() {
+const App: FC = () => {
+  const about = useRef<HTMLHeadingElement>(null);
+  const portfolio = useRef<HTMLHeadingElement>(null);
+  const blog = useRef<HTMLHeadingElement>(null);
+  const contact = useRef<HTMLHeadingElement>(null);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Navbar
+        about={about}
+        portfolio={portfolio}
+        blog={blog}
+        contact={contact}
+      />
+      <Switch>
+        <Route exact path="/">
+          <Home
+            about={about}
+            portfolio={portfolio}
+            blog={blog}
+            contact={contact}
+          />
+        </Route>
+      </Switch>
+    </BrowserRouter>
   );
-}
+};
 
 export default App;

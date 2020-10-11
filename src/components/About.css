@@ -1,0 +1,57 @@
+#about-section {
+  background-color: #fff;
+}
+
+#profile-circle {
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+  background: center;
+  background-image: url('/images/profile.JPG');
+  background-size: contain;
+  border-radius: 50%;
+}
+
+.icon-item {
+  margin: 0 0.8rem;
+  font-size: 2rem;
+  color: #343434;
+  text-align: right;
+}
+
+.icon-item:first-child {
+  margin-left: 0;
+}
+
+.fa-instagram:hover {
+  color: #e1306c;
+}
+
+.fa-facebook:hover {
+  color: #315096;
+}
+
+.fa-twitter:hover {
+  color: #55acee;
+}
+
+.fa-linkedin:hover {
+  color: #0077b5;
+}
+
+@media screen and (max-width: 500px) {
+  #profile-circle {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .col-item.about-description {
+    width: 80%;
+  }
+
+  .col-item.about-description {
+    text-align: center;
+  }
+}

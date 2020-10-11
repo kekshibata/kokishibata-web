@@ -1,0 +1,150 @@
+/*   navigation    */
+
+.navbar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 15px 20px;
+  color: #fff;
+  background-color: #20232a;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+#lastname {
+  font-weight: 1000;
+}
+
+.navbar-menu-lg {
+  display: flex;
+}
+
+.navbar-menu-sm {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 300px;
+  height: 400px;
+  padding-bottom: 0.9rem;
+  background-color: #343434;
+  opacity: 0.9;
+  transition: all 0.5s ease;
+  transform: translate(105%, 99%);
+}
+
+.navbar-menu-sm.active {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  transform: translate(0, 99%);
+}
+
+.navbar-menu-item {
+  padding: 0 1rem;
+  color: #fff;
+  text-decoration: none;
+  vertical-align: bottom;
+}
+
+.navbar-menu-item:hover {
+  color: #61dafb;
+}
+
+.navbar-menu-sm-item {
+  padding: 0;
+  font-size: 25px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.navbar-menu-sm-item:hover {
+  color: #61dafb;
+}
+
+/* menu-trigger common */
+
+.menu-trigger,
+.menu-trigger span {
+  box-sizing: border-box;
+  display: inline-block;
+  transition: all 0.4s;
+}
+
+.menu-trigger {
+  position: relative;
+  width: 27px;
+  height: 22px;
+  cursor: pointer;
+}
+
+.menu-trigger span {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+  border-radius: 4px;
+}
+
+.menu-trigger span:nth-of-type(1) {
+  top: 0;
+}
+
+.menu-trigger span:nth-of-type(2) {
+  top: 10px;
+}
+
+.menu-trigger span:nth-of-type(3) {
+  bottom: 0;
+}
+
+/* menu-trigger animation */
+
+.menu-trigger.active span:nth-of-type(1) {
+  transform: translateY(10px) rotate(-45deg);
+}
+
+.menu-trigger.active span:nth-of-type(2) {
+  opacity: 0;
+}
+
+.menu-trigger.active span:nth-of-type(3) {
+  transform: translateY(-10px) rotate(45deg);
+}
+
+/* end of navigation */
+
+/* small size */
+@media screen and (max-width: 767px) {
+  .navbar-menu-lg {
+    display: none;
+  }
+}
+
+/* extra small */
+@media screen and (max-width: 575px) {
+  .navbar-brand {
+    font-size: 1.3rem;
+  }
+}
+
+/* large size */
+@media screen and (min-width: 768px) {
+  .menu-trigger {
+    display: none;
+  }
+
+  .navbar-menu-sm {
+    display: none;
+  }
+}
