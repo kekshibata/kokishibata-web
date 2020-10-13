@@ -1,5 +1,6 @@
 import React, { FC, RefObject } from 'react';
 import './Contact.css';
+import ScrollAnimation from 'react-animate-on-scroll';
 
 type Props = {
   reference: RefObject<HTMLHeadingElement>;
@@ -8,9 +9,11 @@ type Props = {
 const Contact: FC<Props> = (props) => {
   return (
     <div id="contact" className="padding-top">
-      <h1 className="section-title" ref={props.reference}>
-        Contact
-      </h1>
+      <ScrollAnimation animateIn="fadeInUp" animateOnce={true}>
+        <h1 className="section-title" ref={props.reference}>
+          Contact
+        </h1>
+      </ScrollAnimation>
       <iframe
         className="contact-form"
         title="contact"
